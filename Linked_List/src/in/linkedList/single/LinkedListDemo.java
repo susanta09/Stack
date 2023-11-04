@@ -29,6 +29,15 @@ public class LinkedListDemo {
 		System.out.println(l.getLast());
 		System.out.println("--------------");
 		System.err.println(l.getAt(0));
+		System.out.println(l.removeFirst());
+		l.display();
+		System.out.println(l.removeLast());
+		l.display();
+		System.out.println(l.removeLast());
+		l.display();
+		System.out.println(l.removeAt(2));
+		l.display();
+		System.out.println(l.getSize());
 	}
 
 }

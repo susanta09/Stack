@@ -1,6 +1,6 @@
 package in.linkedList.single;
 
-public class    {
+public class LinkedList   {
 	private Node head;
 	private Node tail;
 	private int size;
@@ -122,6 +122,70 @@ public class    {
 			return temp.data;
 		}
 	}
+	public int removeFirst()throws Exception
+	{
+		Node temp=head;
+		if(temp==null)
+		{
+			throw new Exception("List is empty..");
+		}else if(temp.next==null)
+		{
+			head=tail=null;
+			size--;
+			return temp.data;
+		}else
+		{
+			head=temp.next;
+			size--;
+			return temp.data;
+		}
+	}
+	public int removeLast()throws Exception
+	{
+		Node temp=head;
+		int data=0;
+		if(temp==null)
+		{
+			return removeFirst();
+		}else if(temp.next==null)
+		{
+			return removeFirst();
+		}else {
+			while(temp!=null)
+			{
+				if(temp.next==tail)
+				{
+					tail=temp;
+					size--;
+					data=temp.next.data;
+					tail.next=null;
+				}
+				temp=temp.next;
+			}
+			return data;
+		}
+	}
+	public int removeAt(int index)throws Exception
+	{
+		Node temp=head;
+		if(temp==null)
+		{
+			throw new Exception("list is empty..");
+		}else if (index<0||index>size) {
+			throw new Exception("index out of bound..");
+		}else {
+			for(int i=1;i<index;i++)
+			{
+				temp=temp.next;
+			}
+			int data=temp.next.data;
+			temp.next=temp.next.next;
+			size--;
+			return data;
+		}
+	}
+	
+	
 	public void display()
 	{
 		Node temp=head;
