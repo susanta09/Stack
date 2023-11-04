@@ -11,6 +11,21 @@ public class LinkedList   {
 		size=0;
 	}
 
+	
+//	public Node getHead() {
+//		return head;
+//	}
+//	public void setHead(Node head) {
+//		this.head = head;
+//	}
+//	public Node getTail() {
+//		return tail;
+//	}
+//	public void setTail(Node tail) {
+//		this.tail = tail;
+//	}
+
+
 	public Integer getSize()
 	{
 		return size;
@@ -183,6 +198,50 @@ public class LinkedList   {
 			size--;
 			return data;
 		}
+	}
+	public void merge(LinkedList l1,LinkedList l2)
+	{
+		System.out.println(l1.head);
+		System.out.println(l2.head);
+		if(l1.head==null&&l2.head!=null)
+		{
+			head=l2.head;
+			System.out.println("ram1");
+		}else if (l1.head!=null&&l2.head==null) {
+			head=l1.head;
+			System.out.println("ram2");
+		}else if(l1.head==null&&l2.head==null) {
+			head=null;
+			System.out.println("ram3");
+		}else
+		{
+			Node temp1=l1.head;
+			Node temp2=l2.head;
+			head=Merge.merge(new LinkedList(),temp1, temp2).head;
+		}
+		
+	}
+	public LinkedList merge(LinkedList nl,LinkedList l1,LinkedList l2)
+	{
+		System.out.println(l1.head);
+		System.out.println(l2.head);
+		if(l1.head==null&&l2.head!=null)
+		{
+			nl.head=l2.head;
+			System.out.println("ram1");
+		}else if (l1.head!=null&&l2.head==null) {
+			nl.head=l1.head;
+			System.out.println("ram2");
+		}else if(l1.head==null&&l2.head==null) {
+			nl.head=null;
+			System.out.println("ram3");
+		}else
+		{
+			Node temp1=l1.head;
+			Node temp2=l2.head;
+			nl=Merge.merge(new LinkedList(),temp1, temp2);
+		}
+		return nl;
 	}
 	
 	
