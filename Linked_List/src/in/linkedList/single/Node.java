@@ -1,10 +1,9 @@
 package in.linkedList.single;
 
 public class Node {
-	Integer data;
+	int data;
 	Node next;
-	public Node(Integer data) {
-		super();
+	public Node(int data) {
 		this.data = data;
 		this.next=null;
 	}

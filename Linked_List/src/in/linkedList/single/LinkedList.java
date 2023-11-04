@@ -1,9 +1,9 @@
 package in.linkedList.single;
 
-public class LinkedList {
+public class    {
 	private Node head;
 	private Node tail;
-	private Integer size;
+	private int size;
 	
 	
 	public LinkedList() {
@@ -36,7 +36,7 @@ public class LinkedList {
 		Node n=new Node(data);
 		if(head==null)
 		{
-			head=tail=n;
+			addFirst(data);
 		}else
 		{
 			tail.next=n;
@@ -67,6 +67,60 @@ public class LinkedList {
 			size++;
 		}
 		
+	}
+	public boolean isPresent(Integer data)
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			if(temp.data==data)
+			{
+				return true;
+			}
+			temp=temp.next;
+			
+		}
+		System.out.println(tail);
+		return false;
+	}
+	public int getFirst()throws Exception
+	{
+		Node temp=head;
+		if(head==null)
+		{
+			throw new Exception("List is empty");
+		}else {
+			return temp.data;
+		}
+		
+	}
+	public int getLast()throws Exception
+	{
+		Node temp=tail;
+		if(head==null)
+		{
+			throw new Exception("List is empty");
+		}else {
+			return temp.data;
+		}
+	}
+	public int getAt(int index)throws Exception
+	{
+		if(index<0||index>size)
+		{
+			throw new Exception("Index out of bound");
+		}else if(head==null)
+		{
+			throw new Exception("list is empty");
+		}
+		else {
+			Node temp=head;
+			for(int i=1;i<index;i++)
+			{
+				temp=temp.next;
+			}
+			return temp.data;
+		}
 	}
 	public void display()
 	{

@@ -1,27 +1,34 @@
 package in.linkedList.single;
 
 public class LinkedListDemo {
-	public static void main(String[] args)throws Exception {
-		LinkedList l=new LinkedList();
+	public static void main(String[] args) throws Exception {
+		LinkedList l = new LinkedList();
 		l.addFirst(5);
 		l.addFirst(2);
 		l.addFirst(8);
 		l.display();
 		l.addLast(30);
 		l.display();
-		
+
 		l.addAt(60, 2);
 		l.display();
-		
+
 		l.addAt(100, 0);
 		l.display();
-		
-		l.addAt(200, l.getSize());
+
+		l.addAt(20, l.getSize());
 		l.display();
-		
-		l.addAt(60, -1);
+
+//		l.addAt(60, -1);
+//		l.display();
+		l.addLast(200);
 		l.display();
 		System.out.println(l.getSize());
+		System.out.println(l.isPresent(200));
+		System.out.println(l.getFirst());
+		System.out.println(l.getLast());
+		System.out.println("--------------");
+		System.err.println(l.getAt(0));
 	}
 
 }
