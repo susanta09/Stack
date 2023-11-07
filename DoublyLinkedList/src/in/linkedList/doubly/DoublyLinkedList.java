@@ -90,6 +90,43 @@ public class DoublyLinkedList {
 		}
 		System.out.println();
 	}
+	public int getFirst()throws Exception
+	{
+		Node temp=head;
+		if(temp!=null)
+		{
+			return temp.data;
+		}else {
+			throw new Exception("List is empty..");
+		}
+	}
+	public int getLast()throws Exception
+	{
+		if(head==null)
+		{
+			throw new Exception("List is empty..");
+		}
+		return tail.data;
+		
+	}
+	public int getAt(int index)throws Exception
+	{
+		if(index<0||index>size)
+		{
+			throw new Exception("Index out of bound..");
+		}else if (index==0) {
+			return getFirst();
+		}else if(index==size){
+			return getLast();
+		}else {
+			Node temp=head;
+			for(int i=1;i<index;i++)
+			{
+				temp=temp.next;
+			}
+			return temp.next.data;
+		}
+	}
 	public void display()
 	{
 		Node temp=head;

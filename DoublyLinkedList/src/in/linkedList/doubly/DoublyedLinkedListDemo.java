@@ -27,6 +27,9 @@ public class DoublyedLinkedListDemo {
 		d.addFirst(900);
 		d.display();
 		d.reverse();
+		System.out.println(d.getFirst());
+		System.out.println(d.getLast());
+		System.out.println(d.getAt(d.getSize()-1));
 		
 	}
 }
