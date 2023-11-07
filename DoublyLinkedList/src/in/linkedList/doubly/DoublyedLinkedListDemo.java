@@ -16,12 +16,17 @@ public class DoublyedLinkedListDemo {
 		d.addLast(200);
 		d.display();
 		d.size();
+		System.out.println("////");
 		d.addAt(3, 80);
 		d.display();
+		System.out.println("////");
 		d.addAt(d.getSize(), 800);
 		d.display();
 		d.addAt(0, 800);
 		d.display();
+		d.addFirst(900);
+		d.display();
+		d.reverse();
 		
 	}
 }

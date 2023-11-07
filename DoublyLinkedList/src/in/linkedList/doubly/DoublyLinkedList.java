@@ -24,10 +24,11 @@ public class DoublyLinkedList {
 		Node n=new Node(data);
 		if(head==null)
 		{
-			n.previous=head;
+			//n.previous=head;
 			head=tail=n;
 		}else {
 			n.next=head;
+			head.previous=n;
 			head=n;
 		}
 		size++;
@@ -37,7 +38,7 @@ public class DoublyLinkedList {
 		Node n=new Node(data);
 		if(head==null)
 		{
-			n.previous=head;
+			//n.previous=head;
 			head=tail=n;
 		}else {
 			n.previous=tail;
@@ -64,14 +65,30 @@ public class DoublyLinkedList {
 			Node temp=head;
 			for(int i=1;i<index;i++)
 			{
+				System.out.println(temp.data);
 				temp=temp.next;
+				System.out.println(temp.data);
 			}
 			n.next=temp.next;
-			n.previous=temp;
-			temp.next=n;
+			n.previous=temp.next.previous;
+//			temp.next=n; //74 and 75 is given wrong result when we travle backword   
+//			temp.next.previous=n;
+			
 			temp.next.previous=n;
+			temp.next=n;
+			
 			size++;
 		}
+	}
+	public void reverse()
+	{
+		Node temp=tail;
+		while(temp!=null)
+		{
+			System.out.print(temp.data+"-->");
+			temp=temp.previous;
+		}
+		System.out.println();
 	}
 	public void display()
 	{
