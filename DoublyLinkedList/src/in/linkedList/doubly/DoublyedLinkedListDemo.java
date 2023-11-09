@@ -30,6 +30,14 @@ public class DoublyedLinkedListDemo {
 		System.out.println(d.getFirst());
 		System.out.println(d.getLast());
 		System.out.println(d.getAt(d.getSize()-1));
+		System.out.println("=======");
+		System.out.println(d.removeFirst());
+		d.reverse();
+		System.out.println(d.removeLast());
+		d.reverse();
+		System.out.println(d.removeAt(2));
+		d.reverse();
+		d.display();
 		
 	}
 }

@@ -127,6 +127,55 @@ public class DoublyLinkedList {
 			return temp.next.data;
 		}
 	}
+	public int  removeFirst()throws Exception
+	{
+		Node temp=head;
+		if(head==null)
+		{
+			throw new Exception("List is empty..");
+		}
+		int data=temp.data;
+		head=head.next;
+		head.previous=null;
+		size--;
+		return data;
+		
+	}
+	public int removeLast()throws Exception
+	{
+		if(head==null)
+		{
+			throw new Exception("List is empty..");
+		}
+		int data=tail.data;
+		tail=tail.previous;
+		tail.next=null;
+		size--;
+		return data;
+	}
+	public int removeAt(int index)throws Exception
+	{
+		if(index<0||index>size)
+		{
+			throw new Exception("Index out of bound...");
+		}else if(index==0)
+		{
+			return removeFirst();
+		}else if (index==size) {
+			return removeLast();
+		}else {
+			Node temp=head;
+			for(int i=1;i<index;i++)
+			{
+				temp=temp.next;
+			}
+			int data=temp.next.data;
+			temp.next=temp.next.next;
+			temp.next.previous=temp;
+			return data;
+			
+		}
+	}
 	public void display()
 	{
 		Node temp=head;
